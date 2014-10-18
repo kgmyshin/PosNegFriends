@@ -26,7 +26,6 @@ class HomeController < BaseController
       @best_positive_user = point_user_dict[key]
      end
    end
-   render :text => (@best_positive_user.name + " " + @best_positive_user.point.to_s + " " + @best_positive_user.img_url)
   end
 
   def neg_rank
@@ -39,7 +38,6 @@ class HomeController < BaseController
         @best_negative_user = point_user_dict[key]
       end
     end
-    render :text => (@best_negative_user.name + " " + @best_negative_user.point.to_s + " " + @best_negative_user.img_url)
   end
 
 
@@ -81,6 +79,13 @@ private
         friend.point = point
         user_point_dict[user] = friend
       end
+      
+      if user_point_dict[user].tweet1.nil?
+        user_point_dict[user].tweet1 = text
+      elsif user_point_dict[user].tweet2.nil?
+        user_point_dict[user].tweet2 = text
+      end
+      
       puts "negaposi : " + point.to_s
     end
     puts user_point_dict.inspect

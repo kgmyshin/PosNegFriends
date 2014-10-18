@@ -6,7 +6,11 @@
 
 <div id="content">
   <ul class="tweet_list">
-    <li>これはツイートの本文です。これはツイートの本文です。これはツイートの本文です。</span>
-    <li>これはツイートの本文です。これはツイートの本文です。
+    <% if @best_positive_user.tweet1 %>
+      <li><%= @best_positive_user.tweet1 %></li>
+    <% end %>
+    <% if @best_positive_user.tweet2 %>
+      <li><%= @best_positive_user.tweet2 %></li>
+    <% end %>
   </ul>
 </div>
