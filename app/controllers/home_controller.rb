@@ -56,7 +56,19 @@ private
     tweets.each do |tweet|
       text = tweet.text
       user = tweet.user.screen_name
-      point = get_pos_neg_point text
+
+      cache = TweetCache.find_by_tw_id(tweet.id)
+      pos_neg_point = 0
+      if cache
+        point = cache.posneg
+      else
+        point = get_pos_neg_point text
+        cache = TweetCache.new
+        cache.tw_id = tweet.id
+        cache.posneg = point
+        cache.save
+      end
+ 
       if user_point_dict.include?(user)
         user_point_dict[user] = point + user_point_dict[user]
       else

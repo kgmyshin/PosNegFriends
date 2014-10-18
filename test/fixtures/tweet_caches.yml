@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tw_id: 1
+  posneg: 1
+
+two:
+  tw_id: 1
+  posneg: 1
