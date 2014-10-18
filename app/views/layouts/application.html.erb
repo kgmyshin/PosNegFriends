@@ -4,12 +4,26 @@
   <title>Posnegfriends</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/bootstrap-ceru.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<%= stylesheet_link_tag("/public/css/style.css") %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<h1 class="title_var">幸せのお裾わけアプリ</h1>
 
 <%= yield %>
+
+<div id="footer">
+  Copyright (C) divide happy.
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>
