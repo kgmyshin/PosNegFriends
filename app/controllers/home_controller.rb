@@ -82,8 +82,10 @@ private
       
       if user_point_dict[user].tweet1.nil?
         user_point_dict[user].tweet1 = text
+        user_point_dict[user].tweet1_link = "https://twitter.com/" + user + "/status/" + tweet.id.to_s
       elsif user_point_dict[user].tweet2.nil?
         user_point_dict[user].tweet2 = text
+        user_point_dict[user].tweet2_link = "https://twitter.com/" + user + "/status/" + tweet.id.to_s
       end
       
       puts "negaposi : " + point.to_s

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018092507) do
+ActiveRecord::Schema.define(version: 20141018094139) do
 
   create_table "friends", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20141018092507) do
     t.integer  "point"
     t.string   "tweet1"
     t.string   "tweet2"
+    t.string   "tweet1_link"
+    t.string   "tweet2_link"
   end
 
   create_table "tweet_caches", force: true do |t|
