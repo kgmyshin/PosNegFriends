@@ -1,0 +1,13 @@
+defaults: &defaults
+
+development:
+  <<: *defaults
+  twitter:
+    consumer_key: "your consumer key"
+    consumer_secret: "your consumer secret"
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
