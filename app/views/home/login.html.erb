@@ -1,9 +1,6 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p class="p_choise">ハッピーな友達からハッピーを分けてもらうか、不幸な友達にハッピーを分けてもらうか、選びましょう。</p>
+<p class="p_dan">まずはTwitterでログインしましょう。</p>
 
-
-<% if current_user %>
-  <%= current_user.name %> <%= link_to 'ログアウト', logout_path %>
-<% else %>
-  <%= link_to 'ログイン', '/auth/twitter' %>
-<% end %>
+<div id="content">
+  <%= link_to image_tag('/img/twitter-login.png', {}), '/auth/twitter' %>
+</div>

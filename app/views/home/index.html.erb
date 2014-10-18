@@ -1,5 +1,7 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
- <%= current_user.name %> <%= link_to 'ログアウト', logout_path %>
- <%= current_user.name %> <%= link_to 'ポジティブ', home_pos_rank_path %>
- <%= current_user.name %> <%= link_to 'ネガティブ', home_neg_rank_path %>
+<p class="p_dan">解析が終了しました。</p>
+<p class="p_choise">ハッピーな友達からハッピーを分けてもらうか、不幸な友達にハッピーを分けてもらうか、選びましょう。</p>
+
+<div id="content">
+   <%= link_to image_tag('/img/do-happy.png', {}), home_pos_rank_path %>
+   <%= link_to image_tag('/img/do-unhappy.png', {}), home_neg_rank_path %>
+</div>
