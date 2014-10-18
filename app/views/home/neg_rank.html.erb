@@ -1,0 +1,18 @@
+<p class="p_dan">あなたがこれから合うべき友達はこの人です。</p>
+<img src="<%= @best_negative_user.img_url %>" width="150px" class="twitter_icon">
+
+<!-- ネガの時 -->
+<p class="p_choise">この友達と遊んで元気づけてあげましょう！</p>
+
+<div id="content">
+  <ul class="tweet_list">
+    <% if @best_negative_user.tweet1 %>
+      <li><%= @best_negative_user.tweet1 %></li>
+    <% end %>
+    <% if @best_negative_user.tweet2 %>
+      <li><%= @best_negative_user.tweet2 %></li>
+    <% end %>
+  </ul>
+</div>
+
+
