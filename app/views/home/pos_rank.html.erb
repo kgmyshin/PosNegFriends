@@ -7,10 +7,10 @@
 <div id="content">
   <ul class="tweet_list">
     <% if @best_positive_user.tweet1 %>
-      <li><%= @best_positive_user.tweet1 %></li>
+      <li><%= link_to @best_positive_user.tweet1, @best_positive_user.tweet1_link %></li>
     <% end %>
     <% if @best_positive_user.tweet2 %>
-      <li><%= @best_positive_user.tweet2 %></li>
+      <li><%= link_to @best_positive_user.tweet2, @best_positive_user.tweet2_link %></li>
     <% end %>
   </ul>
 </div>
