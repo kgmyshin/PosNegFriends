@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018070656) do
+ActiveRecord::Schema.define(version: 20141018084208) do
 
-  create_table "tweet_caches", force: true do |t|
-    t.integer  "tw_id"
-    t.integer  "posneg"
+  create_table "friends", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "img_url"
+    t.integer  "point"
   end
 
-  create_table "tweets", force: true do |t|
+  create_table "tweet_caches", force: true do |t|
     t.integer  "tw_id"
     t.integer  "posneg"
     t.datetime "created_at"

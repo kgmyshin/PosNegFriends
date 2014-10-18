@@ -4,7 +4,10 @@ class HomeController < BaseController
 
   def index
     if session[:user_id]
-      @current_user = User.find(session[:user_id])
+      @current_user = User.find_by_id(session[:user_id])
+      unless @current_user
+        redirect_to home_login_path
+      end
     else
       redirect_to home_login_path
     end
@@ -18,12 +21,12 @@ class HomeController < BaseController
    @best_positive_value = -10000
    point_user_dict = get_user_point_dict
    point_user_dict.each_key do |key|
-     if @best_positive_value < point_user_dict[key]
-      @best_positive_value = point_user_dict[key]
-      @best_positive_user = key
+     if @best_positive_value < point_user_dict[key].point
+      @best_positive_value = point_user_dict[key].point
+      @best_positive_user = point_user_dict[key]
      end
    end
-   render :text => (@best_positive_user + @best_positive_value.to_s)
+   render :text => (@best_positive_user.name + " " + @best_positive_user.point.to_s + " " + @best_positive_user.img_url)
   end
 
   def neg_rank
@@ -31,12 +34,12 @@ class HomeController < BaseController
     @best_negative_value = 10000
     point_user_dict = get_user_point_dict
     point_user_dict.each_key do |key|
-      if @best_negative_value > point_user_dict[key]
-        @best_negative_value = point_user_dict[key]
-        @best_negative_user = key
+      if @best_negative_value > point_user_dict[key].point
+        @best_negative_value = point_user_dict[key].point
+        @best_negative_user = point_user_dict[key]
       end
     end
-    render :text => (@best_negative_user + @best_negative_value.to_s)
+    render :text => (@best_negative_user.name + " " + @best_negative_user.point.to_s + " " + @best_negative_user.img_url)
   end
 
 
@@ -70,9 +73,13 @@ private
       end
  
       if user_point_dict.include?(user)
-        user_point_dict[user] = point + user_point_dict[user]
+        user_point_dict[user].point = point + user_point_dict[user].point
       else
-        user_point_dict[user] = point
+        friend = Friend.new
+        friend.name = tweet.user.screen_name
+        friend.img_url = tweet.user.profile_image_url_https
+        friend.point = point
+        user_point_dict[user] = friend
       end
       puts "negaposi : " + point.to_s
     end
