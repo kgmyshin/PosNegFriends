@@ -10,6 +10,10 @@
     "ＭＳ Ｐゴシック", "MS P Gothic",
     sans-serif;
 }
+body{
+  min-width: 320px;
+  max-width: 375px;
+}
 
 #content{
   margin: 20 0 30px 20px;
@@ -32,6 +36,10 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0 0 20px;
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .p_dan{
@@ -52,8 +60,36 @@
   margin-top: 15px;
 }
 .tweet_list li{
+  
+}
+.tweet_list li a{
   background-image: url('../img/list.png');
   background-repeat: no-repeat;
-  padding-right: 55px;
   height:56.5px;
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: left;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: block;
+  padding-right: 65px;
+}
+.tweet_list li a:hover{
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+}
+.tweet_list li a:link{
+  color: #333333;
+}
+.tweet_list li a:visited{
+  color: #333333;
+}
+.tweet_list li a:hover{
+  color: #333333;
+}
+.tweet_list li a:active{
+  color: #333333;
 }
