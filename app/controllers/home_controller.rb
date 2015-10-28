@@ -96,7 +96,7 @@ private
   
   def get_pos_neg_point(text)
     begin
-      url = URI.escape("https://lr.capio.jp/iminos/webapis/synana_k/1_1/?acckey=RoyGp1hi0VUd6Bsm&mode=tw_mode&sent=" + text)
+      url = URI.escape("https://lr.capio.jp/iminos/webapis/synana_k/1_1/?acckey=gi1syM3Feor8Ry4I&mode=tw_mode&sent=" + text)
   
       json = open(url) do |f|
         charset = f.charset # 文字種別を取得
